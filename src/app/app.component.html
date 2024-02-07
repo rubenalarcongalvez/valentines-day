@@ -78,7 +78,7 @@
                     <h2>Entonces... ¿Quieres pasar San Valentín conmigo?</h2>
                     <section id="respuestaSanValentin" [ngClass]="{'quitar-columnas': desaparecer}">
                         <article><span (click)="aceptado = true" class="aceptar" [ngStyle]="{'font-size': fontSizeAceptar + 'px'}" [ngClass]="{'fullAceptar': desaparecer}">¡Sí!</span></article>
-                        <article [ngClass]="{'desaparecer': desaparecer}"><span (click)="rechazar()" class="rechazar" [ngStyle]="{'font-size': fontSizeRechazar + 'px', 'top': top + '%', 'left': right + '%', 'min-width': minWidthRechazar}">¡No!</span></article>
+                        <article [ngClass]="{'desaparecer': desaparecer}"><span (click)="rechazar()" class="rechazar" [ngStyle]="{'font-size': fontSizeRechazar + 'px', 'top': top + '%', 'left': right + '%', 'width': widthRechazar}">¡No!</span></article>
                     </section>
                 }
             } @else {

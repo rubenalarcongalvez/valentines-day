@@ -196,9 +196,9 @@ export class AppComponent {
   fontSizeAceptar: number = 16;
   desaparecer: boolean = false;
   rechazadoPrimeraVez: boolean = false;
-  minWidthRechazar: string = '200px';
+  widthRechazar: string = 'clamp(100%, 200px, 100%)';
   rechazar() {
-    this.minWidthRechazar = '0';
+    this.widthRechazar = '0';
 
     /* de 0 a 100 yendo de 25 en 25 */
     let topAleatorio: number = Math.floor(Math.random() * 5) * 25;
