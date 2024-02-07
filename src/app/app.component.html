@@ -84,8 +84,8 @@
             } @else {
                 <p>Entonces ¡Mándame un mensaje diciéndomelo y con tu resultado! 💞</p>
                 <form [formGroup]="form" (submit)="enviarMensaje()">
-                    <input type="text" formControlName="mensajeEnviar">
-                    @if (form.get('mensajeEnviar')?.touched && form.invalid) {
+                    <input type="text" formControlName="mensajeAEnviar">
+                    @if (form.get('mensajeAEnviar')?.touched && form.invalid) {
                         <h4>Este campo debe ser rellenado con un mensaje a tu gusto para enviármelo</h4>
                     }
                     <button type="submit">Enviar</button>

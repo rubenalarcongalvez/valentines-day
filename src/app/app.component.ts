@@ -237,7 +237,7 @@ export class AppComponent {
     this.form.markAllAsTouched();
 
     if (this.form.valid) {
-      window.location.href = `https://api.whatsapp.com/send/?text=${this.form.get('mensajeEnviar')?.value}&type=phone_number&app_absent=0`;
+      window.location.href = `https://api.whatsapp.com/send/?text=${this.form.get('mensajeAEnviar')?.value}&type=phone_number&app_absent=0`;
     }
   }
 }
