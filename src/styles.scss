@@ -4,3 +4,198 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+img {
+    width: 250px;
+    
+    &.iluminado {
+        filter: drop-shadow(red -1rem 0 10px);
+    }
+
+    &:not(.estatico) {
+        animation-name: escala; /* Referenciamos los keyframes que pusimos */
+        animation-iteration-count: infinite;
+        animation-timing-function: ease;
+
+        &:hover {
+            scale: 1.1;
+            transition: 1s;
+        }
+    }
+}
+
+header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    
+    .estatico {
+        position: absolute;
+        bottom: 0;
+    }
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1rem;
+
+    h2 {
+        text-align: center;
+        margin-top: 1rem;
+    }
+
+    section:not(#respuestaSanValentin) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: .5rem;
+        column-gap: .5rem;
+        margin-top: 1rem;
+
+        article {
+            cursor: pointer;
+            background: linear-gradient(to bottom, rgb(221, 49, 49) 0%, rgb(119, 0, 0) 90%);
+            color: white;
+            width: 100%;
+            border-radius: 5px;
+            padding: .5rem;
+
+            &:hover {
+                outline: 2px solid red;
+                font-weight: bolder;
+            }
+        }
+    }
+}
+
+p {
+    text-align: center;
+    margin-top: 2rem;
+    background-color: antiquewhite;
+    padding: 1rem;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.correcto {
+    background: green !important;
+
+    &:hover {
+        outline: 2px solid lime !important;
+    }
+}
+
+.incorrecto {
+    background: red !important;
+    outline: 2px solid red !important;
+}
+
+#respuestaSanValentin {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: .5rem;
+    column-gap: .5rem;
+    margin-top: 1rem;
+
+    article {
+        position: relative;
+        height: 40vh;
+        margin-inline: 5%;
+    }
+
+    article>span {
+        cursor: pointer;
+        color: white;
+        width: fit-content;
+        height: fit-content;
+        border-radius: 5px;
+        padding: .5rem;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:hover {
+            font-weight: bolder;
+        }
+    }
+
+    .aceptar {
+        background: radial-gradient(circle at -1% 57.5%, rgb(19, 170, 82) 0%, rgb(0, 102, 43) 90%);
+        right: 0;
+
+        &:hover {
+            outline: 2px solid lime;
+        }
+    }
+    .rechazar {
+        background: linear-gradient(to bottom, rgb(221, 49, 49) 0%, rgb(119, 0, 0) 90%);
+
+        &:hover {
+            outline: 2px solid red;
+        }
+    }
+}
+
+.desaparecer {
+    display: none;
+}
+
+.quitar-columnas {
+    display: block !important;
+}
+
+.fullAceptar {
+    width: 100% !important;
+    height: 100% !important;
+    font-size: 2rem;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+    
+    button {
+        background: radial-gradient(circle at -1% 57.5%, rgb(19, 170, 82) 0%, rgb(0, 102, 43) 90%);
+        color: white;
+        padding: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    input {
+        flex-grow: 1;
+        width: 100%;
+        margin-top: 1rem;
+        padding: .5rem;
+        color: blue;
+        font-weight: bold;
+    }
+
+    h4 {
+        color: red;
+        margin-top: 5px;
+    }
+}
+
+/*=============================================
+=            Animaciones            =
+=============================================*/
+
+@keyframes escala {
+    0%   {
+        scale: 1;
+    }
+    50%  {
+        scale: 1.1;
+    }
+    100% {
+        scale: 1;
+    }
+}
+
+/*=====  Final de Animaciones  ======*/
