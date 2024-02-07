@@ -195,7 +195,11 @@ export class AppComponent {
   fontSizeRechazar: number = 16;
   fontSizeAceptar: number = 16;
   desaparecer: boolean = false;
+  rechazadoPrimeraVez: boolean = false;
+  minWidthRechazar: string = '200px';
   rechazar() {
+    this.minWidthRechazar = '0';
+
     /* de 0 a 100 yendo de 25 en 25 */
     let topAleatorio: number = Math.floor(Math.random() * 5) * 25;
     let rightAleatorio: number = Math.floor(Math.random() * 5) * 25;
@@ -211,7 +215,15 @@ export class AppComponent {
     this.top = topAleatorio;
     this.right = rightAleatorio;
     this.fontSizeRechazar--;
-    this.fontSizeAceptar += 3;
+    
+    if (!this.rechazadoPrimeraVez && this.ratioRespuestas > 0) {
+      this.ratioRespuestas = 0;
+      this.fontSizeAceptar *= 2;
+      this.rechazadoPrimeraVez = true;
+    }
+    this.fontSizeAceptar += 8;
+    this.ratioRespuestas--;
+
     if (this.fontSizeRechazar <= 0) {
       this.desaparecer = true;
     }

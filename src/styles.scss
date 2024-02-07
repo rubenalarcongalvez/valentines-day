@@ -125,6 +125,7 @@ p {
     .aceptar {
         background: radial-gradient(circle at -1% 57.5%, rgb(19, 170, 82) 0%, rgb(0, 102, 43) 90%);
         right: 0;
+        min-width: 200px;
 
         &:hover {
             outline: 2px solid lime;
@@ -165,6 +166,7 @@ form {
         padding: 5px;
         border-radius: 5px;
         cursor: pointer;
+        min-width: 200px;
     }
 
     input {
